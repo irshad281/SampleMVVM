@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "networkinterface",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/irshad281/NetworkInterface",
+      "state" : {
+        "branch" : "main",
+        "revision" : "842a97478dca5a55639068217ddf2df82cecd644"
+      }
+    }
+  ],
+  "version" : 2
+}
