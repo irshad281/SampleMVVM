@@ -28,8 +28,10 @@ final class LoginViewController: UIViewController {
     private func observerPublishers() {
         viewModel.loginResponse.sink { [weak self] error in
             // Handle error here..
+            print(self ?? "error", error)
         } receiveValue: { [weak self] response in
             // Handle response here..
+            print(self ?? "response", response ?? "nil")
         }.store(in: &cancellables)
 
     }
@@ -50,7 +52,7 @@ extension LoginViewController {
             viewModel.autneticateUser(email: email, password: password)
             
             // Demo Action
-            App.navigate(to: .dashboard, from: self, mode: .present)
+            App.navigate(to: .home, from: self, mode: .present)
         } else {
             // Show Alert...
         }

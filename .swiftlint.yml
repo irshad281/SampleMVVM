@@ -1,0 +1,223 @@
+## All rules as of SwiftLint v 0.17.0 ##
+
+# Find all the available rules by running:
+# swiftlint rules
+
+included: # Paths to include during linting. `--path` is ignored if present.
+  - COESampleApp
+excluded: # Paths to ignore during linting. Takes precedence over `included`.
+ - Pods
+#- Path to ExcludedFiles
+
+
+# Rule parameters
+
+statement_position:
+#  statement_mode: uncuddled_else
+
+line_length:
+  warning: 300
+  error: 350
+  ignores_comments: true
+  ignores_function_declarations: true
+#  ignoresInterpolatedStrings: true
+#  ignoresURLs: true
+ 
+function_body_length:
+ - 60 #warning
+ - 100 #error
+ 
+file_length:
+ - 650 #warning
+ - 1000 #error
+
+type_body_length:
+ - 300 #warning
+ - 500 #error
+
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 50
+    error: 60
+  excluded: iPhone # excluded via string
+
+disabled_rules: # Rule identifiers to exclude from running
+- class_delegate_protocol # Disabled due to https://github.com/realm/SwiftLint/issues/1939
+- void_function_in_ternary
+# - closing_brace
+# - closure_parameter_position
+# - colon
+# - comma
+# - compiler_protocol_init
+# - control_statement
+# - custom_rules
+- cyclomatic_complexity
+- multiple_closures_with_trailing_closure
+# - discarded_notification_center_observer
+# - dynamic_inline
+# - empty_parameters
+# - empty_parentheses_with_trailing_closure
+# - file_length
+# - for_where
+# - force_cast
+# - force_try
+# - function_body_length
+- function_parameter_count
+# - generic_type_name
+- identifier_name
+# - implicit_getter
+- large_tuple
+# - leading_whitespace
+# - legacy_cggeometry_functions
+# - legacy_constant
+# - legacy_constructor
+# - legacy_nsgeometry_functions
+# - line_length
+# - mark
+# - nesting
+# - notification_center_detachment
+- opening_brace
+# - operator_whitespace
+# - private_unit_test
+# - redundant_discardable_let
+# - redundant_optional_initialization
+# - redundant_string_enum_value
+# - redundant_void_return
+# - return_arrow_whitespace
+# - shorthand_operator
+# - syntactic_sugar
+- todo
+# - trailing_comma
+# - trailing_newline
+# - trailing_semicolon
+- trailing_whitespace
+- blanket_disable_command
+# - type_body_length
+# - type_name
+# - unused_closure_parameter
+# - unused_enumerated
+# - unused_optional_binding
+# - valid_ibinspectable
+# - variable_name
+# - vertical_parameter_alignment
+# - vertical_whitespace
+# - void_return
+# - weak_delegate
+
+opt_in_rules: # Some rules are only opt-in
+#- attributes
+- closure_end_indentation
+- closure_spacing
+- conditional_returns_on_newline
+- empty_count
+- explicit_init
+#- explicit_type_interface
+- fatal_error_message
+#- file_header
+- first_where
+- force_unwrapping
+#- implicitly_unwrapped_optional
+#- missing_docs
+- nimble_operator
+- number_separator
+#- object_literal
+- operator_usage_whitespace
+- overridden_super_call
+- private_outlet
+- prohibited_super_call
+- redundant_nil_coalescing
+#- sorted_imports # Giving false positives AND also should accomodate system packages first
+#- switch_case_on_newline
+#- valid_docs
+- void_function_in_ternary
+  
+  
+custom_rules: # Custom Rules
+  extra_whitespace:
+    name: "Extra whitespaces"
+    regex: "([a-zA-Z0-9=?.(),><!'\"][ ]{2,}[a-zA-Z0-9?.(),><!'\"])"
+    message: "Remove extra whitespaces"
+    severity: warning
+
+#  comments_space:
+#    name: "Space After Comment"
+#    regex: "(^ *//w+)"
+#    message: "There should be a space after //"
+#    severity: warning
+    
+#  empty_first_line:
+#    name: "Empty First Line"
+#    regex: "(^[ a-zA-Z ]*(?:protocol|extension|class|struct) (?!(?:var|let))[ a-zA-Z:]*\{\n *\S+)"
+#    message: "There should be an empty line after a declaration"
+#    severity: warning
+
+#  empty_line_after_guard:
+#    name: "Empty Line After Guard"
+#    regex: "(^ *guard[ a-zA-Z0-9=?.(),><!]*\\{[ a-zA-Z0-9=?.(),><!]*\\}\n *(?!(?:return|guard))\\S+)"
+#    message: "There should be an empty line after a guard"
+#    severity: warning
+ 
+  empty_line_after_super:
+    name: "Empty Line After Super"
+    regex: "(^ *super\\.[ a-zA-Z0-9=?.()\\{\\}:,><!]*\n *(?!(?:\\}|return))\\S+)"
+    message: "There should be an empty line after super"
+    severity: warning
+    
+  multiple_empty_lines:
+    name: "Multiple Empty Lines"
+    regex: "((?:s*\n){3,})"
+    message: "There are too many empty lines"
+    severity: warning
+    
+  unnecessary_leading_void_in:
+    name: "Unnecessary -> Void in at the end of the line"
+    regex: "(-> (Void|()) in$)"
+    message: "Unnecessary '-> Void in' at the end of the line. Use only 'in'"
+    severity: warning
+
+  empty_closure_params:
+    name: "Empty closure params"
+    regex: "\\{ (() -> Void in)$"
+    message: "`() -> Void in` should be avoided"
+    severity: warning
+
+  unnecessary_type:
+    name: "Unnecessary Type"
+    regex: "(?sm)[ \ta-zA-Z0-9]?(?:let|var){1} [ \ta-zA-Z0-9]+?:[ \t]+?([a-zA-Z0-9]+?)[\t ]+?=[\t ]?\\1"
+    message: "Type Definition Not Needed"
+    severity: warning
+
+  invalid_mark_format:
+    name: "Invalid MARK Format"
+    regex: "(?m-s)(\/\/[\\s]*?MARK(?!(\\:[\\s]{1}\\-[\\s]{1}){1}))"
+    message: "Use format: MARK: - Your Info"
+    severity: warning
+
+  delegate_implementation:
+    name: "Delegate Implementation"
+    regex: "(^[ a-zA-Z ]*(?:class|struct) [ a-zA-Z]*: [ ,a-zA-Z]*Delegate)"
+    message: "Create extension to implement the delegate"
+    severity: warning
+
+  force_https:
+    name: "Force HTTPS over HTTP"
+    regex: "((?i)http(?!s))"
+    match_kinds: string
+    message: "HTTPS should be favored over HTTP"
+    severity: warning
+
+  double_space:
+    include: "*.swift"
+    name: "Double space"
+    regex: "([a-z,A-Z] \\s+)"
+    message: "Double space between keywords"
+    match_kinds: keyword
+    severity: warning
+
+  hardcoded_rgb_hexcode:
+    include: "*.swift"
+    name: "Hardcoded RGB Hexcode"
+    regex: "(hex:\\s+\"#?[a-f0-9]{6})"
+    message: "Use App Colors instead of hardcoding RGB hexcode"
+    severity: warning

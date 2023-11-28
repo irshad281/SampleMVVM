@@ -1,0 +1,6 @@
+framework module Pods_COESampleAppTests {
+  umbrella header "Pods-COESampleAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

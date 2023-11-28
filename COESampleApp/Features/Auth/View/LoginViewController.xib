@@ -67,6 +67,12 @@
                         <constraint firstItem="Uh4-R8-bnl" firstAttribute="leading" secondItem="iQd-LM-81k" secondAttribute="leading" id="fDZ-Mx-ucM"/>
                     </constraints>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0Y-cK-t3Q">
+                    <rect key="frame" x="20.000000000000004" y="89" width="57.333333333333343" height="22"/>
+                    <fontDescription key="fontDescription" name="STIXTwoText-Italic_Bold-Italic" family="STIX Two Text" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,6 +80,8 @@
                 <constraint firstItem="iQd-LM-81k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Sf-xZ-iE5"/>
                 <constraint firstItem="iQd-LM-81k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="CTg-c8-cRC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iQd-LM-81k" secondAttribute="trailing" constant="20" id="EWo-nZ-VN1"/>
+                <constraint firstItem="L0Y-cK-t3Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="HUK-uA-OmA"/>
+                <constraint firstItem="L0Y-cK-t3Q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="rG3-cd-rxd"/>
                 <constraint firstItem="iQd-LM-81k" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vMt-xk-eJN"/>
             </constraints>
             <point key="canvasLocation" x="92" y="20"/>

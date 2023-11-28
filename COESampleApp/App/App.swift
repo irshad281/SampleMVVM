@@ -3,12 +3,15 @@
 //  COESampleApp
 //
 //  Created by Irshad Ahmad on 21/11/23.
-//
+//  swiftlint:disable type_name
 
+import Combine
 import Foundation
 import UIKit
+import NetworkInterface
 
 typealias Completion = () -> Void
+typealias Response<T: Codable> = Future<T, RequestError>
 
 enum App {
     static var baseUrl: String { AppConfigViewModel.shared.baseUrl }

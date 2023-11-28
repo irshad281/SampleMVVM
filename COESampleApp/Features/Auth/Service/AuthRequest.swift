@@ -34,7 +34,7 @@ enum AuthRequest: Request {
     }
     
     /// `Api's Headers` to be send
-    func headers() -> [String : String] {
+    func headers() -> [String: String] {
         [
             .contentType: .applicationJSON
         ]

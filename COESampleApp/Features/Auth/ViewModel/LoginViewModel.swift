@@ -27,7 +27,7 @@ extension LoginViewModel {
     /// - Returns: `True/False`
     func isEmailValid(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
     
@@ -37,7 +37,7 @@ extension LoginViewModel {
     func isPasswordValid(_ password: String) -> Bool {
         /// Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character.
         let passwordRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
-        let passwordTest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         let result = passwordTest.evaluate(with: password)
         return result
     }

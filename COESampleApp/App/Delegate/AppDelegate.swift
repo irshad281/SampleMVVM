@@ -3,7 +3,7 @@
 //  COESampleApp
 //
 //  Created by Irshad Ahmad on 21/11/23.
-//
+//  swiftlint:disable delegate_implementation
 
 import UIKit
 
@@ -21,3 +21,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+//  swiftlint:enable delegate_implementation

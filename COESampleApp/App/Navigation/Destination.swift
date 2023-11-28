@@ -21,7 +21,7 @@ enum Destination {
             return controller
             
         case .home:
-            return UIViewController()
+            return HomeViewController()
             
         case .profile:
             return UIViewController()
