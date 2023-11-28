@@ -22,7 +22,7 @@ We have created a SwiftPackage for networking called `NetworkInterface` which is
 Please check the  `HomeRequest.swift` and `HomeService.swift` to get details about the usage of the `NetworkInterface` package.
 
 ## User Interface (UI):
-Auto Layout and interface design guidelines in iOS with Swift are essential for creating visually pleasing and responsive user interfaces. Here are some guidelines for Auto Layout and interface design in iOS using Swift: Please check `HomeViewController.swift` `HomeProductCell` for User Interface design.
+Auto Layout and interface design guidelines in iOS with Swift are essential for creating visually pleasing and responsive user interfaces. Please check `HomeViewController.swift` `HomeProductCell` for User Interface design.
 
 ## Testing:
 Testing is a crucial aspect of software development, including iOS development with Swift. It plays a key role in ensuring the reliability, functionality, and performance of your iOS applications.
@@ -40,5 +40,8 @@ This folder should contains all view model test classes retaled to a featured.
 
 #### ServiceTests:
 This folder should contains all service test classes retaled to a featured.
+
+<img width="1440" alt="banner layout" src="https://i.postimg.cc/YjBH6V8m/Screenshot-2023-11-28-at-2-18-24-PM.png">
+
 
 
