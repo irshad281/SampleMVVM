@@ -7,7 +7,7 @@ A good folder structure can improve collaboration, code readability, and overall
 
 Below is the feauture wise recommeded folder structure of MVVM.
 
-<img width="1440" alt="banner layout" src="https://i.postimg.cc/g2R5HCps/Screenshot-2023-11-28-at-12-40-14-PM.png">
+<img width="1440" alt="Project Structure" src="https://i.postimg.cc/g2R5HCps/Screenshot-2023-11-28-at-12-40-14-PM.png">
 
 ## Code Style and Formatting:
 Good code style and formatting are essential practices in Swift (and any programming language) to improve code readability and maintainability. Properly formatted code helps you and other developers understand the code's logic and structure more easily. In Swift, you should follow the Swift style guide, which generally adheres to Apple's Swift API Design Guidelines. 
@@ -41,7 +41,7 @@ This folder should contains all view model test classes retaled to a featured.
 #### ServiceTests:
 This folder should contains all service test classes retaled to a featured.
 
-<img width="1440" alt="banner layout" src="https://i.postimg.cc/YjBH6V8m/Screenshot-2023-11-28-at-2-18-24-PM.png">
+<img width="1440" alt="Folder Structure" src="https://i.postimg.cc/YjBH6V8m/Screenshot-2023-11-28-at-2-18-24-PM.png">
 
 
 
